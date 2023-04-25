@@ -9,7 +9,7 @@
                     <img src="https://e0.365dm.com/23/03/2048x1152/skysports-martin-odegaard-arsenal_6074824.jpg" style="height: 150px; width: 150px;  object-fit: cover;" class="rounded-circle">
                 </div>
                 <div class="col-9">
-                    <div><h1>Odegaard</h1></div>
+                    <div><h1>{{ $user->username }}</h1></div>
                     <div class="d-flex">
                         <div class="pe-5"><strong>100</strong> posts</div>
                         <div class="pe-5"><strong>1.3m</strong> followers</div>
