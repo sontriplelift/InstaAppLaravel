@@ -9,15 +9,18 @@
                     <img src="https://e0.365dm.com/23/03/2048x1152/skysports-martin-odegaard-arsenal_6074824.jpg" style="height: 150px; width: 150px;  object-fit: cover;" class="rounded-circle">
                 </div>
                 <div class="col-9">
-                    <div><h1>{{ $user->username }}</h1></div>
+                    <div class="d-flex justify-content-between align-items-baseline">
+                        <h1>{{ $user->username }}</h1>
+                        <a href="#">Add new post</a>
+                    </div>
                     <div class="d-flex">
                         <div class="pe-5"><strong>100</strong> posts</div>
                         <div class="pe-5"><strong>1.3m</strong> followers</div>
                         <div class="pe-5"><strong>999</strong> following</div>
                     </div>
-                    <div class="pt-3"><strong>Hello Gooner(ette)s :)</strong></div>
-                    <div>Martin Ødegaard (born 17 December 1998) is a Norwegian professional footballer who plays as a midfielder for and captains both Premier League club Arsenal and the Norway national team.</div>
-                    <div><a href="https://en.wikipedia.org/wiki/Martin_%C3%98degaard" target="_blank">More info...</a></div>
+                    <div class="pt-3"><strong>{{ $user->profile->title }}</strong></div>
+                    <div>{{ $user->profile->description }}</div>
+                    <div><a href="#" target="_blank">{{ $user->profile->url }}</a></div>
                 </div>
             </div>
 
