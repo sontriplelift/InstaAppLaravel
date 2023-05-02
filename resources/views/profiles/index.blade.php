@@ -12,7 +12,7 @@
                     <div class="d-flex justify-content-between align-items-baseline pb-3">
                         <div class="d-flex">
                             <h1 style="margin:0;">{{ $user->username }}</h1>
-                            <button type="button" class="btn btn-primary ms-4">Follow</button>
+                            <follow-button user-id="{{ $user->id }}"></follow-button>
                         </div>
 
                         @can('update', $user->profile)
