@@ -11,6 +11,12 @@ class Profile extends Model
 
     protected $guarded = [];
 
+    public function getProfileImage()
+    {
+        $imagePath = ($this->image) ? $this->image : 'profile/lJCnQlXFa3IrZQdewz6o7dYrx7MQD8S6rOddD9vW.jpg';
+        return '/storage/' . $imagePath;
+    }
+
     /**
      * Get the user that owns the Profile
      *

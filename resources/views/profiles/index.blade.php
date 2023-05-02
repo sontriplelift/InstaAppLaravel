@@ -6,14 +6,22 @@
         <div class="col-md-8">
             <div class="row" style="padding-top: 20px;">
                 <div class="col-3" style="text-align:center;">
-                    <img src="https://e0.365dm.com/23/03/2048x1152/skysports-martin-odegaard-arsenal_6074824.jpg" style="height: 150px; width: 150px;  object-fit: cover;" class="rounded-circle">
+                    <img src="{{ $user->profile->getProfileImage() }}" class="rounded-circle w-100">
                 </div>
                 <div class="col-9">
-                    <div class="d-flex justify-content-between align-items-baseline">
-                        <h1>{{ $user->username }}</h1>
-                        <a href="/p/create">Add new post</a>
+                    <div class="d-flex justify-content-between align-items-baseline pb-3">
+                        <div class="d-flex">
+                            <h1 style="margin:0;">{{ $user->username }}</h1>
+                            <button type="button" class="btn btn-primary ms-4">Follow</button>
+                        </div>
+
+                        @can('update', $user->profile)
+                            <a href="/p/create">Add new post</a>
+                        @endcan
                     </div>
-                    <a href="/profile/{{ $user->id }}/edit">Edit profile</a>
+                    @can('update', $user->profile)
+                        <a href="/profile/{{ $user->id }}/edit">Edit profile</a>
+                    @endcan
                     <div class="d-flex">
                         <div class="pe-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
                         <div class="pe-5"><strong>1.3m</strong> followers</div>
