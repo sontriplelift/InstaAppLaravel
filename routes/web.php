@@ -17,14 +17,12 @@ use App\Http\Controllers\ProfilesController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
 Route::post('follow/{user}', [FollowController::class, 'store']);
 
+Route::get('/', [PostsController::class, 'index'])->name('post.index');
 Route::get('/p/create', [PostsController::class, 'create'])->name('post.create');
 Route::post('/p', [PostsController::class, 'store'])->name('post.store');
 Route::get('/p/{post}', [PostsController::class, 'show'])->name('post.show');
